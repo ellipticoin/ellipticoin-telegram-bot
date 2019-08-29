@@ -1,0 +1,14 @@
+{
+  "name": "masonsdevelopmentbot",
+  "version": "0.0.1",
+  "description": "Mason's Devlopment Bot",
+  "main": "index.js",
+  "author": "Mason Fischer",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "express": "^4.17.1",
+    "pg": "^7.12.1",
+    "telegraf": "^3.32.0"
+  }
+}
