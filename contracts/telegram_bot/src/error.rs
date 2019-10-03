@@ -7,3 +7,7 @@ pub const PERMISSION_DENIED: ErrorStruct<'static> = Error {
     code: 2,
     message: "Permission Denied",
 };
+pub const INSUFFICIENT_FUNDS: ErrorStruct<'static> = Error {
+    code: 3,
+    message: "Insufficient Funds",
+};

@@ -6,8 +6,12 @@
   "author": "Mason Fischer",
   "license": "MIT",
   "dependencies": {
+    "base64url": "^3.0.1",
     "dotenv": "^8.1.0",
+    "ec-client": "../js-ec-client",
+    "ethers": "^4.0.37",
     "express": "^4.17.1",
+    "long": "^4.0.0",
     "morgan": "^1.9.1",
     "pg": "^7.12.1",
     "telegraf": "^3.32.0"
