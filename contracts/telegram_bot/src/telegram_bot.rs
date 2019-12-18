@@ -29,7 +29,7 @@ mod telegram_bot {
             credit(token_address, to, amount);
             Ok(Value::Null)
         } else {
-            Err(error::TRANSFER_FAILED)
+            Err(error::TRANSFER_FAILED.clone())
         }
     }
 
@@ -52,10 +52,10 @@ mod telegram_bot {
                 debit(token_address, from, amount);
                 Ok(Value::Null)
             } else {
-                Err(error::TRANSFER_FAILED)
+                Err(error::TRANSFER_FAILED.clone())
             }
         } else {
-            Err(error::INSUFFICIENT_FUNDS)
+            Err(error::INSUFFICIENT_FUNDS.clone())
         }
     }
 
@@ -74,10 +74,10 @@ mod telegram_bot {
                 credit(token_address, to, amount);
                 Ok(Value::Null)
             } else {
-                Err(error::INSUFFICIENT_FUNDS)
+                Err(error::INSUFFICIENT_FUNDS.clone())
             }
         } else {
-            Err(error::PERMISSION_DENIED)
+            Err(error::PERMISSION_DENIED.clone())
         }
     }
 

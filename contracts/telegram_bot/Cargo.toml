@@ -17,11 +17,11 @@ panic = 'abort'
 incremental = false
 
 [dev-dependencies]
-ellipticoin-test-framework = { path = "/Users/masonf/src/rust-ellipticoin-test-framework" }
+#ellipticoin-test-framework = { path = "/Users/masonf/src/rust-ellipticoin-test-framework" }
 
 [dependencies]
 lazy_static = "1.3.0"
 ellipticoin = { path = "/Users/masonf/src/rust-ellipticoin" }
 wee_alloc = { git = "https://github.com/rustwasm/wee_alloc" }
-wasm-rpc = {"path" = "/Users/masonf/src/rust-wasm-rpc/wasm-rpc"}
-wasm-rpc-macros = {"path" = "/Users/masonf/src/rust-wasm-rpc/wasm-rpc-macros"}
+wasm-rpc = "0.2.14"
+wasm-rpc-macros = "0.2.14"

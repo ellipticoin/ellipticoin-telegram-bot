@@ -61,11 +61,11 @@ async function transfer(from, to, amount) {
   let client = ec.Client.fromConfig();
   return await client.post(
     await client.publicKey(),
-    "TelegramBot2",
+    "TelegramBot",
     "transfer",
     [
       new Buffer(32),
-      "BaseToken",
+      "Ellipticoin",
       from,
       to,
       amount,
@@ -77,11 +77,11 @@ async function withdraw(from, amount) {
   let client = ec.Client.fromConfig();
   return await client.post(
     await client.publicKey(),
-    "TelegramBot2",
+    "TelegramBot",
     "withdraw",
     [
       new Buffer(32),
-      "BaseToken",
+      "Ellipticoin",
       from,
       amount,
     ]
@@ -102,11 +102,11 @@ async function balanceOf(username) {
     let client = new ec.Client({
     });
 
-    let addressBuffer = Buffer("vQMn3JvS3ATITteQ+gOYfuVSn2buuAH+4e8NY/CvtwA=", "base64");
-    let contractName = "TelegramBot2"
+    let addressBuffer = Buffer("hLIY8BEfVC93S1rlx99ABhtVr8XPjyEhkjCU3Z9qucw=", "base64");
+    let contractName = "TelegramBot"
     let key = Buffer.concat([
       new Buffer(32),
-      Buffer.from("BaseToken", "utf8"),
+      Buffer.from("Ellipticoin", "utf8"),
       Buffer.from(username, "utf8"),
     ]);
     let value = await client.getMemory(addressBuffer, contractName, key)
@@ -124,6 +124,6 @@ export function bytesToNumber(bytes) {
 const expressApp = express()
 expressApp.use(logger);
 expressApp.use(app.webhookCallback('/ellipticoin-telegam-bot'))
-expressApp.listen(process.env.PORT || 8080, () => {
-  console.log('Example app listening on port 8080!')
+expressApp.listen(process.env.PORT || 8081, () => {
+  console.log('Example app listening on port 8081!')
 })

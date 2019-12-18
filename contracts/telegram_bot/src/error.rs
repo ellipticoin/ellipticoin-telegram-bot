@@ -1,13 +1,15 @@
-pub use wasm_rpc::error::{Error, ErrorStruct};
-pub const TRANSFER_FAILED: ErrorStruct<'static> = Error {
-    code: 1,
-    message: "Failed to transfer tokens from the specified contract. Please approve th transfer and try again",
-};
-pub const PERMISSION_DENIED: ErrorStruct<'static> = Error {
-    code: 2,
-    message: "Permission Denied",
-};
-pub const INSUFFICIENT_FUNDS: ErrorStruct<'static> = Error {
-    code: 3,
-    message: "Insufficient Funds",
-};
+pub use wasm_rpc::error::Error;
+lazy_static!{ 
+    pub static ref TRANSFER_FAILED: Error = (
+        1,
+        "Failed to transfer tokens from the specified contract. Please approve th transfer and try again".into(),
+    );
+    pub static ref PERMISSION_DENIED: Error = (
+        2,
+        "Permission Denied".into(),
+    );
+    pub static ref INSUFFICIENT_FUNDS: Error = (
+        3,
+        "Insufficient Funds".into(),
+    );
+}
