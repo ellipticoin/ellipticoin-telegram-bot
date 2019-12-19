@@ -57,9 +57,10 @@ app.hears(/\/cashout (.*) (.*)/, async ctx => {
   let transaction = await withdraw(username, ECAmount * EC_SCALE);
   let completedTransaction = await CLIENT.waitForTransactionToBeMined(transaction);
   ctx.replyWithMarkdown(transactionLink(ec.objectHash(transaction)), Telegraf.Extra.webPreview(false));
-  let tx = await sendDai(to, DAIAmount);
-  ctx.replyWithMarkdown(etherscanLink(tx.hash), Telegraf.Extra.webPreview(false));
-
+   if(completedTransaction.return_code == 0) {
+      let tx = await sendDai(to, DAIAmount);
+      ctx.replyWithMarkdown(etherscanLink(tx.hash), Telegraf.Extra.webPreview(false));
+   }
 })
 
 async function transfer(from, to, amount) {
