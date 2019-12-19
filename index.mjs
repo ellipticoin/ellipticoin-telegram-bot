@@ -18,7 +18,8 @@ const BOT_CONTRACT = new ec.Contract(ELLIPTICOIN_ADDRESS, "TelegramBot");
 const CONTRACT_NAME = "TelegramBot";
 const app = new Telegraf(process.env.BOT_TOKEN);
 const DAI_CONTRACT_ADDRESS = "0x92d13090891f5bf92fa7f275a9a69df5e566fb84";
-const INFURA = new ethers.providers.InfuraProvider('kovan');
+const NETWORK = "kovan";
+const INFURA = new ethers.providers.InfuraProvider(NETWORK);
 const DAI_ABI = JSON.parse(fs.readFileSync("mintableTokenABI.json", "utf8"))
 const WALLET = new ethers.Wallet(process.env.ETHEREUM_PRIVATE_KEY, INFURA);
 const CLIENT = ec.Client.fromConfig(`${os.homedir()}/.ec-wallet/config.yaml`);
@@ -94,7 +95,7 @@ const transactionLink = (transactionHash) =>
 `[View Ellipticoin Transaction](https://block-explorer.ellipticoin.org/transactions/${base64url(transactionHash)})`
 
 const etherscanLink = (transactionHash) =>
-`[View Ethereum Transaction on Etherscan](https://kovan.etherscan.io/tx/${transactionHash})`
+`[View Ethereum Transaction on Etherscan](https://${KOVAN}.etherscan.io/tx/${transactionHash})`
 
 async function balanceOf(username) {
     let key = Buffer.concat([
