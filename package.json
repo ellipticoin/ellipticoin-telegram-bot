@@ -10,7 +10,7 @@
     "dotenv": "^8.1.0",
     "ec-client": "../js-ec-client",
     "ethers": "^4.0.37",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "long": "^4.0.0",
     "morgan": "^1.9.1",
     "pg": "^7.12.1",
